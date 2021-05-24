@@ -14,6 +14,11 @@
 
     padding-left: ((75px / $container) * 100vw);
     padding-right: ((75px / $container) * 100vw);
+
+    @media (max-width: 767px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .header {
@@ -48,6 +53,10 @@
 
                 @media (max-width: 1439px) {
                     font-size: ((22px / $container) * 100vw);
+                }
+
+                @media (max-width: 767px) {
+                    font-size: 22px;
                 }
 
                 span {
@@ -119,6 +128,12 @@
 
                 width: ((320px / $container) * 100vw);
             }
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: #446081;
+            }
         }
 
         .phone-and-social {
@@ -129,10 +144,18 @@
                 font-weight: 700;
                 text-align: center;
 
+                display: block;
                 cursor: pointer;
 
                 @media (max-width: 1439px) {
                     font-size: ((26px / $container) * 100vw);
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    animation-name: 'rotate-phone';
+                    animation-duration: .8s;
                 }
 
                 .phone-icon {
@@ -185,6 +208,12 @@
 
                 @media (max-width: 1439px) {
                     font-size: ((22px / $container) * 100vw);
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: #fe6151;
                 }
             }
         }
@@ -316,6 +345,12 @@
                             @media (max-width: 1199px) {
                                 height: ((30px / $container) * 100vw);
                             }
+
+                            &:hover,
+                            &:focus,
+                            &:active {
+                                transform: translateX(((-5px / $container) * 100vw));
+                            }
                         }
 
                         .next-arrow {
@@ -325,6 +360,12 @@
                             @media (max-width: 1199px) {
                                 height: ((30px / $container) * 100vw);
                             }
+
+                            &:hover,
+                            &:focus,
+                            &:active {
+                                transform: translateX(((5px / $container) * 100vw));
+                            }
                         }
 
                         .slide {
@@ -333,6 +374,12 @@
 
                             &:last-child {
                                 margin-right: 0;
+                            }
+
+                            &:hover,
+                            &:focus,
+                            &:active {
+                                transform: translateY(((-8px / $container) * 100vw));
                             }
                         }
                     }
@@ -373,9 +420,17 @@
                 grid-template-columns: (((38px / $container) * 100vw) + ((10px / $container) * 100vw)) auto;
                 align-items: center;
 
+                transition: .2s ease;
+
                 @media(max-width: 1439px) {
                     grid-template-columns: (((45px / $container) * 100vw) + ((10px / $container) * 100vw)) auto;
                     border-bottom: ((8px / $container) * 100vw) solid #e83e3d;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    box-shadow: 0 0 10px 4px rgba(214, 104, 75, .8);
                 }
 
                 .calculator-icon {
@@ -415,5 +470,23 @@
                 }
             }
         }
+    }
+}
+
+@keyframes rotate-phone {
+    25% {
+        transform: rotate(-3deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }
