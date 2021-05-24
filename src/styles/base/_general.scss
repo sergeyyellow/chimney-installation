@@ -20,26 +20,35 @@
     &__grid-container {
         display: grid;
         grid-template-columns: repeat(4, auto);
+
         align-items: center;
         justify-items: center;
+
+        grid-gap: ((20px / $container) * 100vw);
 
         .logo {
             display: grid;
             grid-template-columns: ((183px / $container) * 100vw) auto;
-            align-items: center;
 
+            align-items: center;
             justify-self: start;
 
-            img {
+            cursor: pointer;
+
+            &__image {
                 width: ((183px / $container) * 100vw);
                 height: ((74px / $container) * 100vw);
-
-                cursor: pointer;
             }
 
-            p {
-                max-width: ((294px / $container) * 100vw);
+            &__text {
+                max-width: ((320px / $container) * 100vw);
                 padding-left: ((34px / $container) * 100vw);
+
+                font-size: ((18px / $container) * 100vw);
+
+                @media (max-width: 1439px) {
+                    font-size: ((22px / $container) * 100vw);
+                }
 
                 span {
                     font-weight: 700;
@@ -49,18 +58,33 @@
 
         .map {
             display: grid;
-            grid-template-columns: 77px auto;
+            grid-template-columns: ((77px / $container) * 100vw) auto;
             align-items: center;
 
+            @media (max-width: 1439px) {
+                grid-template-columns: ((85px / $container) * 100vw) auto;
+            }
+
             img {
-                width: 77px;
-                height: 77px;
+                width: ((77px / $container) * 100vw);
+                height: ((77px / $container) * 100vw);
 
                 cursor: pointer;
+
+                @media (max-width: 1439px) {
+                    width: ((85px / $container) * 100vw);
+                    height: ((85px / $container) * 100vw);
+                }
             }
 
             .adress {
                 margin-left: ((18px / $container) * 100vw);
+                cursor: pointer;
+                font-size: ((16px / $container) * 100vw);
+
+                @media (max-width: 1439px) {
+                    font-size: ((20px / $container) * 100vw);
+                }
 
                 .city {
                     font-weight: 700;
@@ -70,33 +94,42 @@
 
         .engineer-consultation--button {
             font-weight: 700;
-            font-size: 16px;
+            font-size: ((16px / $container) * 100vw);
             color: #fff;
 
             padding: ((28px / $container) * 100vw) ((30px / $container) * 100vw);
             background-color: #313d4b;
 
             width: ((260px / $container) * 100vw);
-            border-radius: 8px;
+            border-radius: ((8px / $container) * 100vw);
 
             cursor: pointer;
+
+            @media (max-width: 1439px) {
+                font-size: ((20px / $container) * 100vw);
+
+                width: ((320px / $container) * 100vw);
+            }
         }
 
         .phone-and-social {
             justify-self: end;
 
             .phone {
-                font-size: 22px;
+                font-size: ((22px / $container) * 100vw);
                 font-weight: 700;
                 text-align: center;
 
                 cursor: pointer;
 
-                &::before {
-                    content: url('../../img/png/icon/phone-icon.png');
-                    width: ((16px / $container) * 100vw);
-                    height: ((16px / $container) * 100vw);
-                    margin-right: ((10px / $container) * 100vw);
+                @media (max-width: 1439px) {
+                    font-size: ((26px / $container) * 100vw);
+                }
+
+                .phone-icon {
+                    width: ((20px / $container) * 100vw);
+                    height: ((20px / $container) * 100vw);
+                    margin-right: ((6px / $container) * 100vw);
                 }
             }
 
@@ -107,9 +140,16 @@
 
                 margin-top: ((10px / $container) * 100vw);
 
-                &>img {
+                .viber-icon,
+                .telegram-icon,
+                .whatsapp-icon {
                     width: ((50px / $container) * 100vw);
                     height: ((50px / $container) * 100vw);
+
+                    @media (max-width: 1439px) {
+                        width: ((60px / $container) * 100vw);
+                        height: ((60px / $container) * 100vw);
+                    }
                 }
             }
         }
@@ -122,12 +162,21 @@
             display: flex;
             justify-content: space-between;
 
-            font-size: 16px;
+            font-size: ((16px / $container) * 100vw);
             font-weight: 700;
             text-transform: uppercase;
 
+            @media (max-width: 1439px) {
+                font-size: ((20px / $container) * 100vw);
+            }
+
             &__item {
+                font-size: ((18px / $container) * 100vw);
                 cursor: pointer;
+
+                @media (max-width: 1439px) {
+                    font-size: ((22px / $container) * 100vw);
+                }
             }
         }
     }
@@ -143,7 +192,11 @@
         .grid-container__item-1 {
             h1 {
                 font-weight: 300;
-                font-size: 60px;
+                font-size: ((60px / $container) * 100vw);
+
+                @media (max-width: 1439px) {
+                    font-size: ((64px / $container) * 100vw);
+                }
 
                 span {
                     font-weight: 700;
@@ -164,9 +217,13 @@
                     grid-gap: ((10px / $container) * 100vw);
 
                     .fifteen-text {
-                        font-size: 72px;
+                        font-size: ((72px / $container) * 100vw);
                         font-weight: 800;
                         line-height: 1;
+
+                        @media (max-width: 1439px) {
+                            font-size: ((76px / $container) * 100vw);
+                        }
                     }
                 }
 
@@ -175,6 +232,11 @@
                     padding-left: ((24px / $container) * 100vw);
 
                     position: relative;
+
+                    @media (max-width: 1439px) {
+                        padding-top: ((24px / $container) * 100vw);
+                        padding-left: ((30px / $container) * 100vw);
+                    }
 
                     &::before {
                         content: url(../../img/png/icon/red-line.png);
@@ -187,8 +249,12 @@
                     }
 
                     p {
-                        font-size: 20px;
+                        font-size: ((20px / $container) * 100vw);
                         font-weight: 300;
+
+                        @media (max-width: 1439px) {
+                            font-size: ((24px / $container) * 100vw);
+                        }
 
                         span {
                             font-weight: 700;
@@ -205,10 +271,14 @@
                 grid-gap: ((40px / $container) * 100vw);
 
                 .certificate-block {
-                    font-size: 18px;
+                    font-size: ((18px / $container) * 100vw);
                     font-weight: 700;
 
                     align-self: end;
+
+                    @media (max-width: 1439px) {
+                        font-size: ((22px / $container) * 100vw);
+                    }
 
                     p {
                         margin-bottom: ((18px / $container) * 100vw);
@@ -248,48 +318,53 @@
             .calculate-cost-text {
                 max-width: ((430px / $container) * 100vw);
 
-                font-size: 18px;
+                font-size: ((18px / $container) * 100vw);
                 font-weight: 400;
                 line-height: 1.7;
+
+                @media (max-width: 1439px) {
+                    font-size: ((22px / $container) * 100vw);
+                }
 
                 .discount-text {
                     font-weight: 700;
                     padding: ((4px / $container) * 100vw) ((8px / $container) * 100vw);
                     background-color: #fff;
-                    border-radius: 6px;
+                    border-radius: ((6px / $container) * 100vw);
                     white-space: nowrap;
                 }
             }
 
             .calculate-cost--button {
                 width: ((452px / $container) * 100vw);
-                padding: ((30px / $container) * 100vw) ((56px / $container) * 100vw) ((24px / $container) * 100vw) ((100px / $container) * 100vw);
+                padding: ((30px / $container) * 100vw) ((50px / $container) * 100vw) ((24px / $container) * 100vw);
                 background-image: linear-gradient(#fe7954, #fe5c55);
-                border-radius: 10px;
+                border-radius: ((10px / $container) * 100vw);
                 margin-top: ((30px / $container) * 100vw);
 
-                border-bottom: 6px solid #e83e3d;
+                border-bottom: ((6px / $container) * 100vw) solid #e83e3d;
                 cursor: pointer;
+
+                display: grid;
+                grid-template-columns: (((38px / $container) * 100vw) + ((10px / $container) * 100vw)) auto;
+                align-items: center;
+
+                .calculator-icon {
+                    width: ((38px / $container) * 100vw);
+                    height: ((38px / $container) * 100vw);
+
+                    margin-right: ((10px / $container) * 100vw);
+                }
 
                 &__text {
                     text-align: left;
                     text-transform: uppercase;
-                    font-size: 18px;
+                    font-size: ((18px / $container) * 100vw);
                     font-weight: 700;
                     color: #fff;
 
-                    position: relative;
-
-                    &::before {
-                        content: url('../../img/png/icon/calculator-icon.png');
-                        width: 38px;
-                        height: 38px;
-
-                        position: absolute;
-                        left: -48px;;
-
-                        top: 50%;
-                        transform: translateY(-50%);
+                    @media (max-width: 1439px) {
+                        font-size: ((22px / $container) * 100vw);
                     }
                 }
             }
@@ -302,6 +377,10 @@
                 right: ((106px / $container) * 100vw);
 
                 height: 816px;
+
+                @media (max-width: 1439px) {
+                    height: ((1016px / $container) * 100vw);
+                }
             }
         }
     }

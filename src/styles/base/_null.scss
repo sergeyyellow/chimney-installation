@@ -1,10 +1,17 @@
 * {
     box-sizing: inherit;
+
     color: $dark;
+    transition: .4s;
 
     &:before,
     &:after {
         box-sizing: inherit;
+    }
+
+    &::selection {
+        background-color: $dark;
+        color: #fff;
     }
 }
 
@@ -20,6 +27,7 @@ body {
     font-family: 'Uni Neue', sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: ((18px / $container) * 100vw);
 
     color: $dark;
     overflow-x: hidden;
