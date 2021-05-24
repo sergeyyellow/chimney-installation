@@ -65,6 +65,10 @@
                 grid-template-columns: ((85px / $container) * 100vw) auto;
             }
 
+            @media (max-width: 1199px) {
+                grid-template-columns: ((95px / $container) * 100vw) auto;
+            }
+
             img {
                 width: ((77px / $container) * 100vw);
                 height: ((77px / $container) * 100vw);
@@ -74,6 +78,11 @@
                 @media (max-width: 1439px) {
                     width: ((85px / $container) * 100vw);
                     height: ((85px / $container) * 100vw);
+                }
+
+                @media (max-width: 1199px) {
+                    width: ((95px / $container) * 100vw);
+                    height: ((95px / $container) * 100vw);
                 }
             }
 
@@ -205,11 +214,31 @@
 
             .advantages {
                 display: grid;
-                grid-template-columns: ((320px / $container) * 100vw) ((220px / $container) * 100vw) ((220px / $container) * 100vw);
+                grid-template-columns: repeat(3, auto);
                 grid-gap: ((40px / $container) * 100vw) ((20px / $container) * 100vw);
                 justify-items: center;
 
                 margin-top: ((64px / $container) * 100vw);
+
+                &-one,
+                &-two,
+                &-three {
+                    position: relative;
+
+                    .red-line {
+                        position: absolute;
+                        width: ((22px / $container) * 100vw);
+                        height: ((22px / $container) * 100vw);
+
+                        top: 0;
+                        left: 0;
+
+                        @media (max-width: 1023px) {
+                            width: ((26px / $container) * 100vw);
+                            height: ((26px / $container) * 100vw);
+                        }
+                    }
+                }
 
                 &__grid-container {
                     display: grid;
@@ -228,25 +257,10 @@
                 }
 
                 >div {
-                    padding-top: ((14px / $container) * 100vw);
-                    padding-left: ((24px / $container) * 100vw);
+                    padding-top: ((10px / $container) * 100vw);
+                    padding-left: ((28px / $container) * 100vw);
 
                     position: relative;
-
-                    @media (max-width: 1439px) {
-                        padding-top: ((24px / $container) * 100vw);
-                        padding-left: ((30px / $container) * 100vw);
-                    }
-
-                    &::before {
-                        content: url(../../img/png/icon/red-line.png);
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-
-                        width: 22px;
-                        height: 22px;
-                    }
 
                     p {
                         font-size: ((20px / $container) * 100vw);
@@ -296,11 +310,21 @@
                         cursor: pointer;
 
                         .prev-arrow {
+                            height: ((26px / $container) * 100vw);
                             justify-self: end;
+
+                            @media (max-width: 1199px) {
+                                height: ((30px / $container) * 100vw);
+                            }
                         }
 
                         .next-arrow {
+                            height: ((26px / $container) * 100vw);
                             justify-self: start;
+
+                            @media (max-width: 1199px) {
+                                height: ((30px / $container) * 100vw);
+                            }
                         }
 
                         .slide {
@@ -349,11 +373,19 @@
                 grid-template-columns: (((38px / $container) * 100vw) + ((10px / $container) * 100vw)) auto;
                 align-items: center;
 
+                @media(max-width: 1439px) {
+                    grid-template-columns: (((45px / $container) * 100vw) + ((10px / $container) * 100vw)) auto;
+                    border-bottom: ((8px / $container) * 100vw) solid #e83e3d;
+                }
+
                 .calculator-icon {
                     width: ((38px / $container) * 100vw);
                     height: ((38px / $container) * 100vw);
 
-                    margin-right: ((10px / $container) * 100vw);
+                    @media(max-width: 1439px) {
+                        width: ((45px / $container) * 100vw);
+                        height: ((45px / $container) * 100vw);
+                    }
                 }
 
                 &__text {
