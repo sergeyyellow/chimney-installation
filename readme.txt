@@ -1,5 +1,5 @@
-To implement the desktop and tablet versions of the site, the modern layout technology "CSS Grid" and the "responsive design" approach was used.
-The Sass preprocessor is used to work with site styles 📊.
+To implement the desktop and tablet versions of the site, the modern layout technology "CSS Grid" and the "responsive design" approach was used 📊.
+The Sass preprocessor is used to work with site styles ✨.
 To build the project, the Gulp task manager was used 😀.
 The project is assembled into the "build" folder 📦.
 At the moment, the PageScore of the site is 76/100 (https://prnt.sc/13cpsij) ⏱.
